@@ -7,15 +7,15 @@
 
 	<h1>Tutorial Laravel</h1>
 	<a href="https://www.malasngoding.com/category/laravel">www.malasngoding.com</a>
-    <br>
+
+	<br>
 
 	<p>Nama : {{ $nama }}</p>
-    <p>Usia : {{ $usia }}</p>
-    <p>Alamat : {{ $alamat }}</p>
-    <p>Mata Pelajaran</p>
+
+	<p>Alamat</p>
 	<ul>
 
-		@foreach($matkul as $m)
+		@foreach($alamat as $m)
 
 		<li>{{ $m }}</li>
 

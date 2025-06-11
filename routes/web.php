@@ -1,21 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\PegawaiDBController;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+use App\Http\Controllers\MalasngodingController;
+use App\Http\Controllers\KulkasController;
 
 Route::get('/', function () {
     return view('frontend');
@@ -63,25 +54,42 @@ Route::get('Index(ETS)', function () {
 	return view('index');
 });
 
-Route::get('dosen', [DosenController::class, 'index']);
+Route::get('/pegawai', [PegawaiController::class, 'index'])->name('pegawai.index');
+Route::get('/pegawai/tambah', [PegawaiController::class, 'tambah'])->name('pegawai.tambah');
+Route::post('/pegawai/store', [PegawaiController::class, 'store'])->name('pegawai.store');
+Route::get('/pegawai/edit/{id}', [PegawaiController::class, 'edit'])->name('pegawai.edit');
+Route::post('/pegawai/update', [PegawaiController::class, 'update'])->name('pegawai.update');
+Route::get('/pegawai/hapus/{id}', [PegawaiController::class, 'hapus'])->name('pegawai.hapus');
+Route::get('/pegawai/cari', [PegawaiController::class, 'cari'])->name('pegawai.cari');
 
-Route::get('welcome', [DosenController::class, 'welcome']);
+Route::get('/formulir-pegawai', [PegawaiController::class, 'formulir'])->name('pegawai.formulir');
+Route::post('/proses-pegawai', [PegawaiController::class, 'proses'])->name('pegawai.proses');
 
-Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
-Route::get('/formulir', [PegawaiController::class, 'formulir']);
-Route::post('/formulir/proses', [PegawaiController::class,'proses']);
+Route::get('/blog', [BlogController::class, 'home'])->name('blog.home');
+Route::get('/blog/tentang', [BlogController::class, 'tentang'])->name('blog.tentang');
+Route::get('/blog/kontak', [BlogController::class, 'kontak'])->name('blog.kontak');
 
-// route blog
-Route::get('/blogs', [BlogController::class, 'home']);
-Route::get('/blogs/tentang', [BlogController::class, 'tentang']);
-Route::get('/blogs/kontak', [BlogController::class,'kontak']);
+Route::get('/input', [MalasngodingController::class, 'input'])->name('malasngoding.input');
+Route::post('/proses', [MalasngodingController::class, 'proses'])->name('malasngoding.proses');
 
-//route pegawaiDB
-Route::get('/pegawai', [PegawaiDBController::class, 'index']);
-Route::get('/pegawai/tambah', [PegawaiDBController::class, 'tambah']);
-Route::post('/pegawai/store', [PegawaiDBController::class, 'store']); //jika form dikirim, route ini akan dijalankan
-Route::get('/pegawai/edit/{id}',[PegawaiDBController::class, 'edit']);
-Route::post('/pegawai/update',[PegawaiDBController::class, 'update']);
-Route::get('/pegawai/hapus/{id}', [PegawaiDBController::class, 'hapus']);
+//Bagian tugas membuat tabel sesuai pembagian
+//tugas pertemuan 14 membuat tabel kulkas
+Route::get('/kulkas', [KulkasController::class, 'indexkulkas']);
 
-Route::get('/pegawai/cari', [PegawaiDBController::class, 'cari']);
+//Menginput Data Ke Database Dengan Laravel
+Route::get('/kulkas/tambahkulkas', [KulkasController::class, 'tambahkulkas']);
+
+//Menampilkan Data di store Database Dengan Laravel
+Route::post('/kulkas/storekulkas', [KulkasController::class, 'storekulkas']);
+
+//Mengedit data kulkas
+Route::get('/kulkas/editkulkas/{id}', [KulkasController::class, 'editkulkas']);
+
+//bagian update data kulkas
+Route::post('/kulkas/updatekulkas', [KulkasController::class, 'updatekulkas']);
+
+//bagian hapus data kulkas
+Route::get('/kulkas/hapuskulkas/{id}', [KulkasController::class, 'hapuskulkas']);
+
+//bagian pencarian kulkas
+Route::get('/kulkas/carikulkas', [KulkasController::class, 'carikulkas']);
