@@ -5,10 +5,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\MalasngodingController;
+use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\KulkasController;
+use App\Http\Controllers\KaryawanDBController;
 
 Route::get('/', function () {
+    return view('template');
+});
+
+Route::get('/frontend', function () {
     return view('frontend');
 });
 
@@ -93,3 +98,9 @@ Route::get('/kulkas/hapuskulkas/{id}', [KulkasController::class, 'hapuskulkas'])
 
 //bagian pencarian kulkas
 Route::get('/kulkas/carikulkas', [KulkasController::class, 'carikulkas']);
+
+//route karywan
+Route::get('/karyawan', [KaryawanDBController::class, 'index']);
+Route::get('/tambah/karyawan', [KaryawanDBController::class, 'tambah']);
+Route::post('/karyawan/store', [KaryawanDBController::class, 'store']); //jika form dikirim, route ini akan dijalankan
+Route::get('/karyawan/hapus/{id}', [KaryawanDBController::class, 'hapus']);

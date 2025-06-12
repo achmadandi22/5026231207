@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Muhammad Dzaki Adfiz : 5026231150</title>
+    <title>Achmad Andi Miftakhul Huda : 5026231207</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
@@ -15,44 +16,42 @@
         .jumbotron {
             background-color: #9de2e2;
             height: 100px;
-            margin-bottom: 0;
         }
     </style>
 </head>
 
 <body>
     <div class="jumbotron text-center mx-auto">
-        <h1>5026231150 : Muhammad Dzaki Adfiz</h1>
+        <h1>5026231207 :Achmad Andi Miftakhul Huda</h1>
     </div>
+
     <nav class="navbar navbar-expand-sm bg-light">
-        <div class="container">
-            <ul class="navbar-nav w-100 d-flex justify-content-between">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">All Front End</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/pegawai">Pegawai</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">EAS</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Latihan 1</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Latihan 2</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Latihan 3</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/harddisk">Tugas CRUD</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/karyawan">Latihan 11 Juni (Genap)</a>
-                </li>
-            </ul>
-        </div>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/frontend">All Front End</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pegawai">Pegawai</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/lampu">Tugas CRUD</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/karyawan">Karyawan</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">EAS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Latihan 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Latihan 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Latihan 3</a>
+            </li>
+        </ul>
     </nav>
 
     <br>

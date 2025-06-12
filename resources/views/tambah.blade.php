@@ -1,35 +1,52 @@
 @extends('template')
 
 @section('content')
-    <div class="container mt-4">
-        <h2>Tambah Pegawai</h2>
+    <h3>Tambah Pegawai</h3>
 
-        <form action="/pegawai/store" method="post">
-            @csrf
-            <div class="form-group">
-                <label for="namaPegawai">Nama</label>
-                <input type="text" class="form-control" id="namaPegawai" name="nama" placeholder="Masukkan nama pegawai" required>
-            </div>
+    <a href="/pegawai">Kembali</a>
 
-            <div class="form-group">
-                <label for="jabatanPegawai">Jabatan</label>
-                <input type="text" class="form-control" id="jabatanPegawai" name="jabatan" placeholder="Masukkan jabatan pegawai" required>
-            </div>
+    <br />
+    <br />
 
-            <div class="form-group">
-                <label for="umurPegawai">Umur</label>
-                <input type="number" class="form-control" id="umurPegawai" name="umur" placeholder="Masukkan umur pegawai" required>
+    {{-- action mengarah ke pegawai/store untuk dilakukan routing --}}
+    <form action="/pegawai/store" method="post">
+        {{ csrf_field() }}
+        <div class="row p-1 mb-1">
+            <div class="col-2">
+                <label class="control-label">Nama </label>
             </div>
+            <div class="col-6">
+                <input type="text" name="nama" required="required" class="form-control">
+            </div>
+        </div>
 
-            <div class="form-group">
-                <label for="alamatPegawai">Alamat</label>
-                <textarea class="form-control" id="alamatPegawai" name="alamat" rows="3" placeholder="Masukkan alamat pegawai" required></textarea>
+        <div class="row p-1 mb-1">
+            <div class="col-2">
+                <label class="control-label">Jabatan </label>
             </div>
+            <div class="col-6">
+                <input type="text" name="jabatan" required="required" class="form-control">
+            </div>
+        </div>
 
-            <div class="form-group d-flex justify-content-between">
-                <a href="/pegawai" class="btn btn-secondary">Kembali</a>
-                <button type="submit" class="btn btn-primary">Simpan</button>
+        <div class="row p-1 mb-1">
+            <div class="col-2">
+                <label class="control-label">Umur </label>
             </div>
-        </form>
-    </div>
+            <div class="col-6">
+                <input type="text" name="umur" required="required" class="form-control">
+            </div>
+        </div>
+
+        <div class="row p-1 mb-1">
+            <div class="col-2">
+                <label class="control-label">Alamat </label>
+            </div>
+            <div class="col-6">
+                <textarea name="alamat" required="required" class="form-control"></textarea>
+            </div>
+        </div>
+        <br />
+        <input type="submit" value="Simpan Data" class="btn btn-success">
+    </form>
 @endsection
