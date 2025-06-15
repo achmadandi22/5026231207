@@ -104,3 +104,9 @@ Route::get('/karyawan', [KaryawanDBController::class, 'index']);
 Route::get('/tambah/karyawan', [KaryawanDBController::class, 'tambah']);
 Route::post('/karyawan/store', [KaryawanDBController::class, 'store']); //jika form dikirim, route ini akan dijalankan
 Route::get('/karyawan/hapus/{id}', [KaryawanDBController::class, 'hapus']);
+
+//Latihan1
+
+use App\Http\Controllers\PageCounterController;
+
+Route::get('/latihan1', [PageCounterController::class, 'index']);
