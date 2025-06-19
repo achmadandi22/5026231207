@@ -34,7 +34,7 @@
                 <a class="nav-link" href="/pegawai">Pegawai</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/monitor">Tugas CRUD</a>
+                <a class="nav-link" href="{{ route('pegawai.index') }}">Tugas CRUD</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">EAS</a>
