@@ -1,65 +1,89 @@
 @extends('template')
 
 @section('content')
-	<h3>Data Kulkas</h3>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="font-weight-bold"><i class="fas fa-snowflake mr-2"></i>Tambah Kulkas Baru</h2>
+        <a href="/kulkas" class="btn btn-info rounded-pill shadow-sm">
+            <i class="fas fa-arrow-left mr-2"></i>Kembali
+        </a>
+    </div>
 
-	<a href="/kulkas" class="btn btn-info"> Kembali</a>
-
-	<br/>
-	<br/>
-
-	<form action="/kulkas/storekulkas" method="post">
-        <form action="/kulkas/storekulkas" method="post" class="form-horizontal">
-		{{ csrf_field() }}
-            <div class="form-group has-success">
-                    <label class="control-label col-sm-2" for="merkkulkas">
-                        Merk Kulkas
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form action="/kulkas/storekulkas" method="post">
+                {{ csrf_field() }}
+                
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="merkkulkas">
+                        <i class="fas fa-tag mr-2"></i>Merk Kulkas
                     </label>
-                    <div class="col-6">
-                            <input class="form-control"
-                                type="text"
-                                id="merkkulkas"
-                                placeholder="Masukkan Merk Kulkas"
-                                name="merkkulkas" required="required">
-                        </div>
-                    </div>
-            <div class="form-group has-success">
-                    <label class="control-label col-sm-2" for="hargakulkas">
-                        Harga Kulkas
-                    </label>
-                    <div class="col-6">
-                            <input class="form-control"
-                                type="number"
-                                id="hargakulkas"
-                                placeholder="Masukkan Harga Kulkas"
-                                name="hargakulkas" required="required">
-                        </div>
-                    </div>
-            <div class="form-group has-success">
-                    <label class="control-label col-sm-2" for="tersedia">
-                        Tersedia (0=Tidak, 1=Ya)
-                    </label>
-                    <div class="col-6">
+                    <div class="col-sm-9">
                         <input class="form-control"
-                            type="number"
-                            id="tersedia"
-                            placeholder="Masukkan (0=Tidak, 1=Ya)"
-                            name="tersedia" min="0" max="1" required="required">
+                            type="text"
+                            id="merkkulkas"
+                            placeholder="Masukkan Merk Kulkas"
+                            name="merkkulkas" required="required">
                     </div>
                 </div>
-            <div class="form-group has-success">
-                    <label class="control-label col-sm-2" for="diskon">
-                        Diskon
+                
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="harga">
+                        <i class="fas fa-money-bill-wave mr-2"></i>Harga
                     </label>
-                    <div class="col-6">
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Rp</span>
+                            </div>
                             <input class="form-control"
-                                type="number" step="0.01"
-                                id="diskon"
-                                placeholder="Masukkan Diskon (misal: 0.15)"
-                                name="diskon" required="required">
+                                type="number"
+                                id="harga"
+                                placeholder="Masukkan Harga"
+                                min="0"
+                                max="999999999"
+                                name="harga" required="required">
                         </div>
                     </div>
-
-		<input type="submit" value="Simpan Data" class="btn btn-success">
-	</form>
+                </div>
+                
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="tersedia">
+                        <i class="fas fa-check-circle mr-2"></i>Ketersediaan
+                    </label>
+                    <div class="col-sm-9">
+                        <select class="form-control" id="tersedia" name="tersedia" required="required">
+                            <option value="" disabled selected>-- Pilih Ketersediaan --</option>
+                            <option value="1">Tersedia</option>
+                            <option value="0">Tidak Tersedia</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" for="berat">
+                        <i class="fas fa-weight mr-2"></i>Berat
+                    </label>
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <input class="form-control"
+                                type="number"
+                                step="0.1"
+                                id="berat"
+                                placeholder="Masukkan Berat Kulkas"
+                                name="berat" required="required">
+                            <div class="input-group-append">
+                                <span class="input-group-text">kg</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-success rounded-pill px-5 shadow-sm">
+                        <i class="fas fa-save mr-2"></i>Simpan Data
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 @endsection

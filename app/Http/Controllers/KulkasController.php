@@ -28,16 +28,16 @@ class KulkasController extends Controller
         // Validasi input
         $request->validate([
             'merkkulkas' => 'required|string|max:25',
-            'hargakulkas' => 'required|numeric', // Validasi ini memastikan bahwa inputnya adalah angka
+            'harga' => 'required|numeric', // Validasi ini memastikan bahwa inputnya adalah angka
             'tersedia' => 'required|boolean',
-            'diskon' => 'required|numeric|between:0,1',
+            'berat' => 'required|numeric',
         ]);
         // insert data ke table kulkas
         DB::table('kulkas')->insert([
             'merkkulkas' => $request->merkkulkas,
-            'hargakulkas' => $request->hargakulkas,
+            'hargakulkas' => (int)$request->harga, // Pastikan disimpan sebagai integer
             'tersedia' => $request->tersedia,
-            'diskon' => $request->diskon
+            'berat' => $request->berat
         ]);
         // alihkan halaman ke halaman kulkas
         return redirect('/kulkas');
@@ -56,9 +56,9 @@ class KulkasController extends Controller
         // update data kulkas
         DB::table('kulkas')->where('ID',$request->ID)->update([
             'merkkulkas' => $request->merkkulkas,
-            'hargakulkas' => $request->hargakulkas,
+            'hargakulkas' => (int)$request->harga, // Pastikan disimpan sebagai integer
             'tersedia' => $request->tersedia,
-            'diskon' => $request->diskon
+            'berat' => $request->berat
         ]);
         // alihkan halaman ke halaman kulkas
         return redirect('/kulkas');
