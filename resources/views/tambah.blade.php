@@ -3,13 +3,13 @@
 @section('content')
     <h3>Tambah Pegawai</h3>
 
-    <a href="/pegawai">Kembali</a>
+    <a href="{{ route('pegawai.index') }}">Kembali</a>
 
     <br />
     <br />
 
     {{-- action mengarah ke pegawai/store untuk dilakukan routing --}}
-    <form action="/pegawai/store" method="post">
+    <form action="{{ route('pegawai.store') }}" method="post">
         {{ csrf_field() }}
         <div class="row p-1 mb-1">
             <div class="col-2">

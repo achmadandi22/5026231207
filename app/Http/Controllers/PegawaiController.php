@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class PegawaiController extends Controller
 {
-    public function index($nama){
+    public function index($nama = 'Pegawai'){
         return $nama;
     }
 

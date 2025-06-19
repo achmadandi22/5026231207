@@ -59,13 +59,13 @@ Route::get('Index(ETS)', function () {
 	return view('index');
 });
 
-Route::get('/pegawai', [PegawaiController::class, 'index'])->name('pegawai.index');
-Route::get('/pegawai/tambah', [PegawaiController::class, 'tambah'])->name('pegawai.tambah');
-Route::post('/pegawai/store', [PegawaiController::class, 'store'])->name('pegawai.store');
-Route::get('/pegawai/edit/{id}', [PegawaiController::class, 'edit'])->name('pegawai.edit');
-Route::post('/pegawai/update', [PegawaiController::class, 'update'])->name('pegawai.update');
-Route::get('/pegawai/hapus/{id}', [PegawaiController::class, 'hapus'])->name('pegawai.hapus');
-Route::get('/pegawai/cari', [PegawaiController::class, 'cari'])->name('pegawai.cari');
+Route::get('/pegawai', [PegawaiDBController::class, 'index'])->name('pegawai.index');
+Route::get('/pegawai/tambah', [PegawaiDBController::class, 'tambah'])->name('pegawai.tambah');
+Route::post('/pegawai/store', [PegawaiDBController::class, 'store'])->name('pegawai.store');
+Route::get('/pegawai/edit/{id}', [PegawaiDBController::class, 'edit'])->name('pegawai.edit');
+Route::post('/pegawai/update', [PegawaiDBController::class, 'update'])->name('pegawai.update');
+Route::get('/pegawai/hapus/{id}', [PegawaiDBController::class, 'hapus'])->name('pegawai.hapus');
+Route::get('/pegawai/cari', [PegawaiDBController::class, 'cari'])->name('pegawai.cari');
 
 Route::get('/formulir-pegawai', [PegawaiController::class, 'formulir'])->name('pegawai.formulir');
 Route::post('/proses-pegawai', [PegawaiController::class, 'proses'])->name('pegawai.proses');

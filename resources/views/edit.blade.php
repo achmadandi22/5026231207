@@ -5,10 +5,10 @@
 <div class="container mt-4">
     <h3 class="mb-4">Edit Data Pegawai</h3>
 
-    <a href="/pegawai" class="btn btn-secondary mb-3">← Kembali</a>
+    <a href="{{ route('pegawai.index') }}" class="btn btn-secondary mb-3">← Kembali</a>
 
     @foreach ($pegawai as $p)
-    <form action="/pegawai/update" method="post">
+    <form action="{{ route('pegawai.update') }}" method="post">
         {{ csrf_field() }}
         <input type="hidden" name="id" value="{{ $p->pegawai_id }}">
 
