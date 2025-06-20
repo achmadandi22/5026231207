@@ -108,5 +108,12 @@ Route::get('/karyawan/hapus/{id}', [KaryawanDBController::class, 'hapus']);
 //Latihan1
 
 use App\Http\Controllers\PageCounterController;
+use App\Http\Controllers\NilaiController;
 
 Route::get('/latihan1', [PageCounterController::class, 'index']);
+
+//Route EAS - Nilai
+Route::get('/eas', [NilaiController::class, 'index'])->name('nilai.index');
+Route::get('/eas/tambah', [NilaiController::class, 'create'])->name('nilai.tambah');
+Route::post('/eas/store', [NilaiController::class, 'store'])->name('nilai.store');
+Route::get('/eas/hapus/{id}', [NilaiController::class, 'hapus'])->name('nilai.hapus');

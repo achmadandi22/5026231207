@@ -18,7 +18,7 @@
             font-family: 'Poppins', sans-serif;
             background-color: #f8f9fa;
         }
-        
+
         .header-gradient {
             background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
             padding: 25px 0;
@@ -26,14 +26,14 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             margin-bottom: 25px;
         }
-        
+
         .header-text {
             color: white;
             font-weight: 600;
             letter-spacing: 1px;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
-        
+
         .nav-menu {
             background-color: white;
             border-radius: 15px;
@@ -41,11 +41,11 @@
             padding: 10px;
             margin-bottom: 25px;
         }
-        
+
         .nav-item {
             margin: 5px;
         }
-        
+
         .nav-link {
             border-radius: 8px;
             padding: 10px 15px;
@@ -54,18 +54,18 @@
             display: flex;
             align-items: center;
         }
-        
+
         .nav-link:hover {
             background-color: #e9f9f9;
             color: #185a9d;
             transform: translateY(-2px);
         }
-        
+
         .nav-icon {
             margin-right: 8px;
             font-size: 1.1em;
         }
-        
+
         .content-container {
             background-color: white;
             border-radius: 15px;
@@ -99,7 +99,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{  route('nilai.index') }}">
                         <i class="fas fa-graduation-cap nav-icon"></i> EAS
                     </a>
                 </li>
@@ -120,7 +120,7 @@
                 </li>
             </ul>
         </nav>
-        
+
         <div class="content-container">
             @yield('content')
         </div>
